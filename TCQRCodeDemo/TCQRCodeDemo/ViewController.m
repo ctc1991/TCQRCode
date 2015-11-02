@@ -19,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    view.backgroundColor = [UIColor whiteColor];
+    _textField.leftView = view;
+    _textField.leftViewMode = UITextFieldViewModeAlways;
+    _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 }
 
 - (IBAction)makeQRCode {
@@ -31,11 +36,16 @@
         imageString = @"head_006.jpg";
     }
     [_imageView removeFromSuperview];
-    _imageView = [TCQRCode QRCodeImageViewWithContent:_textField.text colorWithRed:123 green:123 blue:123 centerImage:[UIImage imageNamed:imageString] frame:CGRectMake(0, 0, 200, 200)];
+    _imageView = [TCQRCode QRCodeImageViewWithContent:_textField.text colorWithRed:0 green:0 blue:0 centerImage:[UIImage imageNamed:imageString] frame:CGRectMake(0, 0, 320, 320)];
     _imageView.center = self.view.center;
     [self.view addSubview:_imageView];
     _imageView.layer.borderWidth = 1.0;
-    _imageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _imageView.layer.borderColor = [UIColor redColor].CGColor;
+    _imageView.backgroundColor = [UIColor greenColor];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_textField resignFirstResponder];
 }
 
 #pragma mark - UITextFieldDelegate - Method

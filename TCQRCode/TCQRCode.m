@@ -29,6 +29,10 @@
     CGFloat size = frame.size.width*0.2;
     UIImageView *centerIv = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width*0.5-size*0.5, frame.size.width*0.5-size*0.5, size, size)];
     centerIv.image = centerImage;
+    centerIv.layer.borderWidth = 2.5;
+    centerIv.layer.borderColor = [UIColor whiteColor].CGColor;
+    centerIv.layer.masksToBounds = YES;
+    centerIv.layer.cornerRadius = 4.0;
     [imageView addSubview:centerIv];
     return imageView;
 }

@@ -17,44 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入字符串转成二维码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-S3-NHf">
-                                <rect key="frame" x="60" y="38" width="200" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Ekt-xg-RSA"/>
-                                    <constraint firstAttribute="height" constant="30" id="LQy-d3-i1q"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ozR-ba-MlC"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91N-Cp-tLH">
                                 <rect key="frame" x="122" y="84" width="75" height="30"/>
                                 <animations/>
-                                <state key="normal" title="生成二维码"/>
+                                <state key="normal" title="生成二维码">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="makeQRCode" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQw-R2-9sb"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPI-dw-NV2">
+                                <rect key="frame" x="50" y="44" width="220" height="32"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="H0t-ve-qY2"/>
+                                    <constraint firstAttribute="width" constant="220" id="afZ-JQ-bFu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.97691808267058167" blue="0.90665130523892856" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="v9l-S3-NHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="AmU-1V-UwH"/>
-                            <constraint firstItem="91N-Cp-tLH" firstAttribute="top" secondItem="v9l-S3-NHf" secondAttribute="bottom" constant="16" id="EVf-Sp-eR1"/>
+                            <constraint firstItem="OPI-dw-NV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeR-hZ-28x"/>
+                            <constraint firstItem="91N-Cp-tLH" firstAttribute="top" secondItem="OPI-dw-NV2" secondAttribute="bottom" constant="8" id="LRt-Pw-3Cl"/>
                             <constraint firstItem="91N-Cp-tLH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OfY-ew-AmV"/>
-                            <constraint firstItem="v9l-S3-NHf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V15-gC-eum"/>
+                            <constraint firstItem="OPI-dw-NV2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="rEr-o6-hvW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="制作" id="kyh-Hg-0z9">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="textField" destination="v9l-S3-NHf" id="gbg-b0-XnG"/>
+                        <outlet property="textField" destination="OPI-dw-NV2" id="9Xc-5H-9fD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
